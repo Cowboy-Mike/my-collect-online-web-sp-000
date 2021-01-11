@@ -1,6 +1,9 @@
 def my_collect(array)
-  collection = []
-  my_collect(array) do |lang|
-  collection << lang.upcase
+  i = 0
+  collect = []
+  while i < array.length
+    collect << yield(array[i])
+    i+=1
+  end
+  collect
 end
-
